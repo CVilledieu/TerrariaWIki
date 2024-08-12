@@ -1,0 +1,35 @@
+{{block "GameStage" .}}
+<link id="style" hx-swap-oob="true" rel="stylesheet" href="/static/views/css/index.css">
+    <div class="GameStage_Screen">
+        {{template "GSheader"}}
+        {{template "GSContent"}}
+    </div>
+{{end}}
+
+
+{{define "GSheader"}}
+<header class="GameStage_Header">
+            <button class="GSClose" hx-get="/GameStageClose" hx-target=".GameStage_Screen" hx-swap="outerHTML">X</button>
+            <button class="SettingsBtn">Settings</button>
+</header>
+{{end}}
+
+
+
+{{define "GSContent"}}
+<div class="GameStage_Content">
+    {{template "Boss"}}
+    {{template "Boss"}}
+    {{template "Boss"}}
+</div>
+{{end}}
+
+
+{{define "Boss"}}
+<div>
+    <div class="BossIcon">
+        Icon
+    </div>
+    <div class="BossName">{{.Name}}</div>
+</div>
+{{end}}

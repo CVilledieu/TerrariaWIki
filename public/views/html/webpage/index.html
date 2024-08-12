@@ -1,0 +1,50 @@
+{{block "index" .}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/resources/htmx.min.js"></script>
+    <link id="style"  rel="stylesheet" href="/static/views/css/index.css">
+    <title>Terraria</title>
+</head>
+<body>
+    <div class="Root">
+        {{template "CoreContent" .}}
+    </div>
+</body>
+</html>
+{{end}}
+
+
+
+{{block "CoreContent" . }}
+    <div class="Character_Screen">
+        {{template "Header"}}
+        {{template "Character"}}
+        {{template "Items"}}
+    </div>
+{{end}}
+
+
+{{define "Header"}}
+<header class="Character_Header">
+    <button class="GSOpen" hx-get="/GameStageOpen" hx-target=".Character_Screen" hx-swap="outerHTML">Update game stage</button>
+    <button class="SettingsBtn">Settings</button>
+</header>
+{{end}}
+
+{{define "Character"}}
+<div class="Character_Stat_Display">
+    <div class="Character_Display">
+        <div class="Character-Head">Head</div>
+        <div class="Character-body">Body</div>
+        <div class="Character-Legs">Legs</div>
+        <div class="Character-Boots">Boots</div>
+    </div>
+
+    <div class="Stats_Display">These are the stats</div>
+</div>
+
+{{end}}
+
