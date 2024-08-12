@@ -23,7 +23,7 @@ func StartServer() {
 	})
 
 	e.GET("/GameStageClose", func(c echo.Context) error {
-		return c.Render(http.StatusOK, "CoreContent", nil)
+		return c.Render(http.StatusOK, "Core_Content", nil)
 	})
 
 	e.Logger.Fatal(e.Start(":8080"))

@@ -9,6 +9,11 @@ body{
     color: white;
 }
 
+.Core_Content_div{
+    display: flex;
+    flex-direction: column;
+}
+
 .Character_Screen{
     padding: 20px;
     display: flex;
@@ -32,4 +37,10 @@ body{
 
 .Character_Stat_Display{
     display: flex;
+}
+
+.Core_Display_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

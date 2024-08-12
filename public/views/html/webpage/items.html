@@ -1,4 +1,4 @@
-{{define "Items"}}
+{{define "Core_Items"}}
 <div class="Items_Container">
     <div class="Items_Header">
         <button class="Weapons">Weapons</button>
@@ -8,8 +8,21 @@
         <button class="Accessories">Accessories</button>
         <button class="Other">Other</button>
     </div>
-    <div class="Item_Display">
+    <div class="Item_Full_Display">
         Displaying items
+    </div>
+</div>
+{{end}}
+
+
+{{block "Item" .Item}}
+<div class="Item">
+    <div class="Item_Icon">
+        Pic
+    </div>
+    <div class="Item_Info">
+        {{.Name}}
+        {{.Stats}}
     </div>
 </div>
 {{end}}

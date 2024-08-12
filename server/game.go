@@ -15,9 +15,10 @@ type Character struct {
 }
 
 type Item struct {
-	Id    int
-	Name  string
-	Stats map[string]int //? seems like best option
+	Id   int
+	Name string
+	//? seems like best option, but may have issues when it comes to displaying the Stats.
+	Stats map[string]int
 }
 
 func GetBosses() []Boss {

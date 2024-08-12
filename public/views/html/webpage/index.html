@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="Root">
-        {{template "CoreContent" .}}
+        {{template "Core_Content" .}}
     </div>
 </body>
 </html>
@@ -18,21 +18,31 @@
 
 
 
-{{block "CoreContent" . }}
-    <div class="Character_Screen">
-        {{template "Header"}}
-        {{template "Character"}}
-        {{template "Items"}}
+{{block "Core_Content" . }}
+    <div class="Core_Content_div">
+        {{template "Core_Header"}}
+        {{template "Core_Display"}}
+        {{template "Core_Items"}}
     </div>
 {{end}}
 
 
-{{define "Header"}}
+{{define "Core_Header"}}
 <header class="Character_Header">
-    <button class="GSOpen" hx-get="/GameStageOpen" hx-target=".Character_Screen" hx-swap="outerHTML">Update game stage</button>
+    <button hx-get="/GameStageOpen" hx-target=".Core_Content_div" hx-swap="outerHTML">Update game stage</button>
     <button class="SettingsBtn">Settings</button>
 </header>
 {{end}}
+
+
+{{define "Core_Display"}}
+    <div class="Core_Display_div">
+        {{template "Character"}}
+        {{template "Core_Item_Display"}}
+    </div>
+{{end}}
+
+
 
 {{define "Character"}}
 <div class="Character_Stat_Display">
@@ -48,3 +58,8 @@
 
 {{end}}
 
+
+{{define "Core_Item_Display"}}
+Core Item Display
+
+{{end}}
